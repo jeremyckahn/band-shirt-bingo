@@ -1,45 +1,7 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { Container, Typography, Box, Paper } from '@mui/material'
-
-const bands: string[] = [
-  'Led Zeppelin',
-  'Queen',
-  'The Beatles',
-  'The Rolling Stones',
-  'AC/DC',
-  'Pink Floyd',
-  'Metallica',
-  'Nirvana',
-  "Guns N' Roses",
-  'U2',
-  'Red Hot Chili Peppers',
-  'Foo Fighters',
-  'Green Day',
-  'Pearl Jam',
-  'Aerosmith',
-  'Iron Maiden',
-  'Black Sabbath',
-  'Deep Purple',
-  'Van Halen',
-  'Rush',
-  'Def Leppard',
-  'Bon Jovi',
-  'Journey',
-  'Eagles',
-  'The Who',
-  'Jimi Hendrix Experience',
-  'Cream',
-  'The Doors',
-  'Dire Straits',
-  'Fleetwood Mac',
-  'Lynyrd Skynyrd',
-  'The Clash',
-  'Ramones',
-  'ZZ Top',
-  'KISS',
-  'Soundgarden',
-]
+import { useBands } from './contexts/Bands/useBands'
 
 const darkTheme = createTheme({
   palette: {
@@ -58,6 +20,8 @@ const darkTheme = createTheme({
 })
 
 function App() {
+  const { bands } = useBands()
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
